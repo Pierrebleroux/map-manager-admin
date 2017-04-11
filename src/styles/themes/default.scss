@@ -1,0 +1,117 @@
+// Colors
+$page_background: #4f4f4f;
+
+// Typography
+body {
+  background-color: $page_background;
+  font-family: 'Open Sans', sans-serif;
+  color: #fefefe;
+}
+
+// Links
+a {
+  color: white;
+
+  &:hover {
+    color: #ddd;
+  }
+}
+
+// Panels
+.panel {
+  background-color: #5f5f5f;
+  box-shadow: inset 1px 1px 6px rgba(0,0,0,0.6);
+  border: none;
+
+  &.round {
+    border-radius: 160px;
+    margin: 0 auto;
+    box-shadow: inset 1px 1px 12px rgba(0,0,0,0.6);
+
+    &.medium {
+      padding-top: 82px;
+      width: 280px;
+      height: 280px;
+    }
+  }
+}
+
+// Button
+.btn {
+  border-radius: 5px;
+  padding: 8px 20px;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+
+  background-color: #999;
+  box-shadow: 0px 5px 0px 0px #888;
+  border-color: transparent;
+
+  &:active, &:focus, &:hover {
+    color: white;
+  }
+}
+
+.btn:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.blue {
+  background-color: #55acee;
+  box-shadow: 0px 5px 0px 0px #3C93D5;
+
+  &:hover {
+    box-shadow: 0px 5px 0px 0px #2E74A8;
+  }
+}
+
+.green {
+  background-color: #2ecc71;
+  box-shadow: 0px 5px 0px 0px #15B358;
+}
+
+.green:hover {
+  background-color: #48E68B;
+}
+
+.red {
+  background-color: #e74c3c;
+  box-shadow: 0px 5px 0px 0px #CE3323;
+}
+
+.red:hover {
+  background-color: #FF6656;
+}
+
+.purple {
+  background-color: #9b59b6;
+  box-shadow: 0px 5px 0px 0px #82409D;
+}
+
+.purple:hover {
+  background-color: #B573D0;
+}
+
+.orange {
+  background-color: #e67e22;
+  box-shadow: 0px 5px 0px 0px #CD6509;
+}
+
+.orange:hover {
+  background-color: #FF983C;
+}
+
+.yellow {
+  background-color: #f1c40f;
+  box-shadow: 0px 5px 0px 0px #D8AB00;
+}
+
+.yellow:hover {
+  background-color: #FFDE29;
+}
