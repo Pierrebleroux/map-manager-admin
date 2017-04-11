@@ -1,21 +1,48 @@
-import React from 'react'
-import Header from '../../components/Header'
-import Navbar from '../../components/Navbar'
+import React from 'react';
+import Header from '../../components/Header';
+import Navbar from '../../components/Navbar';
+
+import { connect } from 'react-redux';
+
 import './CoreLayout.scss'
 import '../../styles/core.scss'
 
-export const CoreLayout = ({ children }) => (
-  <div className='container text-center'>
-    <Navbar />
-    <Header />
-    <div className='core-layout__viewport'>
-      {children}
-    </div>
-  </div>
-)
+class CoreLayout extends React.Component {
+
+  componentDidUpdate(prevProps) {
+    const { dispatch, redirectUrl } = this.props;
+    const isLoggingOut = prevProps.isLoggedIn && !this.props.isLoggedIn;
+    const isLoggingIn = !prevProps.isLoggedIn && this.props.isLoggedIn;
+
+    if (isLoggingIn) {
+      this.props.router.push(redirectUrl);
+    } else if (isLoggingOut) {
+      // do any kind of cleanup or post-logout redirection here
+    }
+  }
+
+  render() {
+    return (
+      <div className='container text-center'>
+        <Navbar />
+        <Header />
+        <div className='core-layout__viewport'>
+          {this.props.children}
+        </div>
+      </div>
+    );
+  }
+}
 
 CoreLayout.propTypes = {
   children : React.PropTypes.element.isRequired
-}
+};
 
-export default CoreLayout
+const mapStateToProps = (state) => {
+  return {
+    isLoggedIn: !!(state.auth && state.auth.user),
+    redirectUrl: state.redirectUrl,
+  };
+};
+
+export default connect(mapStateToProps)(CoreLayout);

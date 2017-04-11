@@ -1,27 +1,27 @@
-import api from '../../../modules/api'
-
 // ------------------------------------
 // Constants
 // ------------------------------------
-export const SYNC_SPREAD_SHEET = 'SYNC_SPREAD_SHEET'
+export const SET_REDIRECT_URL = 'routing/SET_REDIRECT_URL';
 
 // ------------------------------------
 // Actions
 // ------------------------------------
-export const syncSpreadSheet = () => {}
+export const setRedirectUrl = (url) => ({
+  type: SET_REDIRECT_URL, url
+});
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [SAVE_USER_AUTH]: (state, action) => ({...state, user: action.user})
-}
+  [SET_REDIRECT_URL]: (state, action) => ({...state, redirectUrl: state.url})
+};
 
 // ------------------------------------
 // Reducer
 // ------------------------------------
-const initialState = {}
+const initialState = {};
 export default function authReducer (state = initialState, action) {
-  const handler = ACTION_HANDLERS[action.type]
-  return handler ? handler(state, action) : state
-}
+  const handler = ACTION_HANDLERS[action.type];
+  return handler ? handler(state, action) : state;
+};

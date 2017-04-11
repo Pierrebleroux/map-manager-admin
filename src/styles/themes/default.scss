@@ -12,7 +12,7 @@ body {
 a {
   color: white;
 
-  &:hover {
+  &:hover, &:focus, &:active {
     color: #ddd;
   }
 }

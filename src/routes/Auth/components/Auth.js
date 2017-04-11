@@ -1,10 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import GoogleLogin from 'react-google-login'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import GoogleLogin from 'react-google-login';
 
 const responseGoogle = (response) => {
   console.log(response);
-}
+};
 
 export const Auth = (props) => (
   <div className='panel round medium'>
@@ -18,6 +18,6 @@ export const Auth = (props) => (
       onFailure={responseGoogle}
     />
   </div>
-)
+);
 
-export default Auth
+export default Auth;
